@@ -54,19 +54,19 @@ const containers = [{
 
 // !SECTION
 
-function addContainer(selectedContainer) {
-  containers.forEach(container => {
-    if (container.quantity) {
-      return
-    } else {
-      const foundContainer = containers.find(container => container.name = selectedContainer)
-      // @ts-ignore
-      foundContainer.quantity = true
-      calculateTotal()
-      drawContainer()
-    }
-  })
-}
+// function addContainer(selectedContainer) {
+//   containers.forEach(container => {
+//     if (container.quantity) {
+//       return
+//     } else {
+//       const foundContainer = containers.find(container => container.name == selectedContainer)
+//       // @ts-ignore
+//       foundContainer.quantity = true
+//       calculateTotal()
+//       drawContainer()
+//     }
+//   })
+// }
 
 
 function drawContainer() {
@@ -151,13 +151,13 @@ function calculateTotal() {
   toppings.forEach(topping => {
     totalPrice += (topping.price * topping.quantity)
   })
-  containers.forEach(container => {
-    if (container.quantity) {
-      totalPrice += container.price
-    } else {
-      return
-    }
-  })
+  // containers.forEach(container => {
+  //   if (container.quantity) {
+  //     totalPrice += container.price
+  //   } else {
+  //     return
+  //   }
+  // })
 
 
   console.log(totalPrice)
